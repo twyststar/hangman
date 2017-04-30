@@ -15,6 +15,20 @@ class Hangman
   define_singleton_method(:all)do
     @@words
   end
+  define_singleton_method(:clear)do
+    @@words = []
+  end
+  define_singleton_method(:find) do |id|
+  found_word = nil
+  @@words.each() do |word|
+    if word.id().eql?(id)
+      found_word = word
+    end
+  end
+  found_word
+  end
+
+  end
   define_method(:blanked) do
     @word.each() do |letter|
       @answer.push("_")
@@ -24,6 +38,9 @@ class Hangman
 
   define_method(:word) do
     @word
+  end
+  define_method(:wrong) do
+    @wrong
   end
   define_method(:answer) do
     @answer
@@ -37,7 +54,6 @@ class Hangman
 
   define_method(:letter_check) do |input|
     i=0
-
     if @word.include?(input)
       @word.each() do |letter|
         if letter == input
@@ -52,7 +68,3 @@ class Hangman
       @wrong.push(input)
     end
   end
-
-
-
-end

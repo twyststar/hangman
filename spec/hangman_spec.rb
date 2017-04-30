@@ -37,6 +37,7 @@ describe(Hangman) do
 
   describe('save') do
     it('saves a instance of hangman to the class') do
+      Hangman.clear()
       test_word4 = Hangman.new('hello')
       test_word4.save()
       expect(Hangman.all()).to(eq([test_word4]))
