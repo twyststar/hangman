@@ -9,6 +9,12 @@ class Hangman
     @answer = self.blanked()
   end
 
+  define_method(:save)do
+    @@words.push(self)
+  end
+  define_singleton_method(:all)do
+    @@words
+  end
   define_method(:blanked) do
     @word.each() do |letter|
       @answer.push("_")

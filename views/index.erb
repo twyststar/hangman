@@ -1,0 +1,16 @@
+<div class="col-md-6">
+  <h1>Welcome to hangman!</h1>
+  <p>This game requires two people, one to enter a word and one who will try to guess the word.</p>
+  <p>Your input word will be 'blanked' out, and the second player will try to find the word by guessing letters. For each wrong guess, a bit of the hanging man will be filled in...7 wrong guesses and it's game over!</p>
+  <p>Choose a player to look away, enter a word, and hit play!</p>
+</div>
+
+<div class="col-md-6">
+  <form action="/word_input" method="post">
+    <div class="form-group">
+      <label for="word">Enter a word:</label>
+      <input class="form-control" type="text" name="word" id="word">
+    </div>
+    <button type="submit" name="button">Play</button>
+  </form>
+</div>
