@@ -13,6 +13,26 @@
     <button type="submit" name="button">Guess</button>
   </form>
 </div>
+
 <div class="col-xs-6">
+<%if @wrong.length < 1 %>
   <img src="hangman_gallows.gif" alt="">
+<% elsif @wrong.length() == 1 %>
+<img src="hangman_head.gif" alt="">
+<% elsif @wrong.length() == 2 %>
+<img src="hangman_body.gif" alt="">
+<% elsif @wrong.length() == 3 %>
+<img src="hangman_one_arm.gif" alt="">
+<% elsif @wrong.length() == 4 %>
+<img src="hangman_two_arms.gif" alt="">
+<% elsif @wrong.length() == 5 %>
+<img src="hangman_oneleg.gif" alt="">
+<% elsif @wrong.length() == 6 %>
+<img src="hangman_no_face.gif" alt="">
+<h3>Oh no! One more chance!</h3>
+<% else %>
+<img src="hangman_last.gif" alt="">
+<h1>Game Over!</h1>
+<a href="/"><button type="button" name="button">Play a new game</button></a>
+<% end %>
 </div>
